@@ -24,3 +24,11 @@ class Solution(object):
                 return i
             if i == len(nums) - 1:
                 return i + 1
+'''
+Pseudocode:
+Loop through the entire length of the list
+Constantly check if the current list's value is the target
+Return index if yes
+Return target if current value is greater than target
+Return index + 1 if the current value is less than target when the end of the list is reached
+'''
