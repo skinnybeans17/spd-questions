@@ -24,3 +24,12 @@ class Solution(object):
             for index2, num2 in enumerate(nums):
                 if index1 is not index2 and num1 + num2 == target:
                     return [index1, index2]
+                
+'''
+Pseudocode:
+Create a dict that's empty
+Loop through all the list's numbers
+Get the target and number's difference
+Return the index and value if it already exists there
+Add them to directory if otherwise
+'''
