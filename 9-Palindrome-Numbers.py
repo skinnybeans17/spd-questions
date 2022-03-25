@@ -24,3 +24,10 @@ class Solution(object):
             return True
         else:
             return False
+        
+'''
+Pseudocode:
+Create a list that's empty
+Add numbers to it
+Reverse the list and check if they are equal
+'''
