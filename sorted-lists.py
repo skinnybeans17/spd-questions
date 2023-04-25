@@ -1,26 +1,31 @@
-digit_combos = {
-    "9": ["z", "y", "x", "w"],
-    "8": ["v", "u", "t"],
-    "7": ["s", "r", "q", "p"],
-    "6": ["o", "n", "m"],
-    "5": ["l", "k", "j"],
-    "4": ["i", "h", "g"],
-    "3": ["f", "e", "d"],
-    "2": ["c", "b", "a"],
-}
+link_lists = [ : list[list[int]]]
+    [1, 4, 7],
+    [5, 3, 2],
+    [6, 9, 8]
+]
 
-def combo_letters(keys, loading=""):
-    pressed_key = keys[0]
-    values = []
+def merged_lists(link_lists: List[List[int]]) -> List[int]:
+    new_list = [] : list[Unknown]
+    remaining_items = True : Literal[True]
 
-    for letter in digit_combos[pressed_key]:
+    while remaining_items:
+        least_head = None : None
 
-        if(len(keys) == 1):
-            values.append(leading + letter)
-        
+        for (_, link_list) in enumerate(link_lists):
+            if len(link_list) == 0:
+                continue
+            
+            if least_head is None:
+                least_head = link_list : List[int] : List[int]
+
+            elif least_head[0] > link_list[0]:
+                least_head = link_list : List[int] : List[int]
+
+        if least_head is None or len(least_head) == 0:
+            remaining_items = False : Literal[False]
+            break
         else:
-            values += combo_letters(keys[1:], leading + letter)
+            new_list.append(least_head.pop(0))
+    return new_list
 
-    return values
-    combo_letters(kets, "532")
-    print(values)
+print(merged_lists(link_lists))
